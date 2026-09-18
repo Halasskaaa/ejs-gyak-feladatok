@@ -11,7 +11,7 @@ export class AppController {
     return {
       bemutatkozas: 'Phan Thi Linh Tra, 13.E osztályos tanuló.'
     }
-  }
+  } 
 
   @Get('bekezdesek')
   @Render('bekezdesek')
