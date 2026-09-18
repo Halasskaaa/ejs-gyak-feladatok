@@ -68,4 +68,10 @@ Quisque pellentesque consectetur neque, ut interdum justo tristique nec. Curabit
       .filter(c => c.toLocaleLowerCase().includes(keresett.toLocaleLowerCase()))
     }
   }
+
+  @Get('color-picker')
+  @Render('szin-valszto')
+  getRandomColor() {
+    
+  }
 }
