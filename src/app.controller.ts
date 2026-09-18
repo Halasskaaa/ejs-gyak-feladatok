@@ -49,4 +49,11 @@ Quisque pellentesque consectetur neque, ut interdum justo tristique nec. Curabit
     ) as Criminal;
     return {criminal};
   }
+
+  @Get('search')
+  searchCrime() {
+    const criminal = JSON.parse(
+      fs.readFileSync('wanted.json', {encoding: 'utf-8'})
+    ) as Criminal;
+  }
 }
