@@ -70,8 +70,8 @@ Quisque pellentesque consectetur neque, ut interdum justo tristique nec. Curabit
   }
 
   @Get('color-picker')
-  @Render('szin-valszto')
+  @Render('color-picker')
   getRandomColor() {
-    
+
   }
 }
