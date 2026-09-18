@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanted</title>
+</head>
+<body>
+    <h1>Wanted: <%= criminal.name %></h1>
+    <img src="<%= criminal.profile %>" alt="">    
+    <ul>
+        <% for (const h of criminal.hobbies) { %>
+            <li><%= h %></li>
+        <% } %>
+    </ul>
+    
+    <a href="http://localhost:3000/">Bemutatkozás</a>
+    <a href="http://localhost:3000/bekezdesek">Bekezdések</a>
+    <a href="http://localhost:3000/piros-kek">Piros-Kék oldal</a>
+</body>
+</html>

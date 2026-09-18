@@ -1,5 +1,7 @@
 import { Controller, Get, Render } from '@nestjs/common';
 import { AppService } from './app.service.js';
+import { Criminal } from './Criminal.js';
+import fs from 'node:fs';
 
 @Controller()
 export class AppController {
@@ -38,4 +40,13 @@ Quisque pellentesque consectetur neque, ut interdum justo tristique nec. Curabit
       bgColor: bgColor
     }
   } 
+
+  @Get('wanted')
+  @Render('wanted')
+  getWanted() {
+    const criminal = JSON.parse(
+      fs.readFileSync('wanted.json', {encoding: 'utf-8'})
+    ) as Criminal;
+    return {criminal};
+  }
 }
