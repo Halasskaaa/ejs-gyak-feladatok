@@ -51,6 +51,7 @@ Quisque pellentesque consectetur neque, ut interdum justo tristique nec. Curabit
   }
 
   @Get('search')
+  @Render('search')
   searchCrime(@Query('keresett') keresett: string) {
     if (!keresett) {
       return {
