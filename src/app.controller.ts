@@ -1,4 +1,4 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Controller, Get, Query, Render } from '@nestjs/common';
 import { AppService } from './app.service.js';
 import { Criminal } from './Criminal.js';
 import fs from 'node:fs';
@@ -51,9 +51,20 @@ Quisque pellentesque consectetur neque, ut interdum justo tristique nec. Curabit
   }
 
   @Get('search')
-  searchCrime() {
+  searchCrime(@Query('keresett') keresett: string) {
+    if (!keresett) {
+      return {
+        talalatok: []
+      }
+    }
+
     const criminal = JSON.parse(
       fs.readFileSync('wanted.json', {encoding: 'utf-8'})
     ) as Criminal;
+
+    return {
+      talalatok: criminal.crimes
+      .filter(c => c.toLocaleLowerCase().includes(keresett.toLocaleLowerCase()))
+    }
   }
 }

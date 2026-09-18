@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keresés</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="keresett">
+        <button type="submit">Keresés</button>
+    </form>
+
+    <% if (talalatok.lenth === 0) { %>
+        Nincs találat
+        <% } else { %>
+            <% for (const t of talalatok) { %>
+                <p><%=  t  %></p>
+            <% } %>
+        <% } %>
+</body>
+</html>
